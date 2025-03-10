@@ -3,7 +3,6 @@ import { getTranslations } from "@/i18n/server";
 import StoreConfig from "@/store.config";
 import { CategoryBox } from "@/ui/category-box";
 import { ProductList } from "@/ui/products/product-list";
-import { YnsLink } from "@/ui/yns-link";
 import * as Commerce from "commerce-kit";
 import Image from "next/image";
 import type { Metadata } from "next/types";
@@ -23,12 +22,6 @@ export default async function Home() {
 					<div className="max-w-md space-y-4">
 						<h2 className="text-balance text-3xl font-bold tracking-tight md:text-4xl">{t("hero.title")}</h2>
 						<p className="text-pretty text-neutral-600">{t("hero.description")}</p>
-						<YnsLink
-							className="inline-flex h-10 items-center justify-center rounded-full bg-neutral-900 px-6 font-medium text-neutral-50 transition-colors hover:bg-neutral-900/90 focus:outline-hidden focus:ring-1 focus:ring-neutral-950"
-							href={t("hero.link")}
-						>
-							{t("hero.action")}
-						</YnsLink>
 					</div>
 					<Image
 						alt="Cup of Coffee"
