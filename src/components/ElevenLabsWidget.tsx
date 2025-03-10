@@ -91,7 +91,10 @@ export function ElevenLabsWidget() {
 				add_to_cart: async ({ quantity = 1 }) => {
 					const addToCartButton = document.querySelector('[data-testid="add-to-cart-button"]');
 					if (addToCartButton instanceof HTMLButtonElement) {
-						addToCartButton.click();
+						for (let i = 0; i < quantity; i++) {
+							addToCartButton.click();
+							await new Promise((resolve) => setTimeout(resolve, 50));
+						}
 					}
 				},
 				go_to_route: ({ path }: { path: string }) => {
