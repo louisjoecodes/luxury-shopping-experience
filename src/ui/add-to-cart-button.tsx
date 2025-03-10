@@ -24,6 +24,7 @@ export const AddToCartButton = ({
 	return (
 		<Button
 			id="button-add-to-cart"
+			data-testid="button-add-to-cart"
 			size="lg"
 			type="submit"
 			className={cn("rounded-full text-lg relative", className)}

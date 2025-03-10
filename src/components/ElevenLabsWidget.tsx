@@ -9,7 +9,7 @@ interface ElevenLabsConvaiEvent extends CustomEvent {
 			clientTools: {
 				get_current_page: () => string;
 				go_to_checkout: () => void;
-				add_to_cart: ({ quantity }: { quantity?: number }) => Promise<void>;
+				add_to_cart: ({ number }: { number?: number }) => Promise<void>;
 				go_to_route: ({ path }: { path: string }) => void;
 			};
 		};
@@ -88,13 +88,16 @@ export function ElevenLabsWidget() {
 				go_to_checkout: () => {
 					router.push("/cart");
 				},
-				add_to_cart: async ({ quantity = 1 }) => {
-					const addToCartButton = document.querySelector('[data-testid="add-to-cart-button"]');
+				add_to_cart: async ({ number = 1 }) => {
+					const addToCartButton = document.getElementById("button-add-to-cart");
 					if (addToCartButton instanceof HTMLButtonElement) {
-						for (let i = 0; i < quantity; i++) {
-							addToCartButton.click();
-							await new Promise((resolve) => setTimeout(resolve, 50));
-						}
+						const clicks = Array(number).fill(null);
+						await Promise.all(
+							clicks.map(() => {
+								addToCartButton.click();
+								return new Promise((resolve) => setTimeout(resolve, 150));
+							}),
+						);
 					}
 				},
 				go_to_route: ({ path }: { path: string }) => {
