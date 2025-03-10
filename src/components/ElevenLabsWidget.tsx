@@ -30,7 +30,7 @@ export function ElevenLabsWidget() {
 		wrapper.className = "desktop";
 
 		const widget = document.createElement("elevenlabs-convai");
-		widget.setAttribute("agent-id", "OZmXb9pmFsSkDE5dukJv");
+		widget.setAttribute("agent-id", "wofv768yFSfi0mlKsELB");
 		widget.setAttribute("variant", "full");
 
 		const updateWidgetColors = (widget: HTMLElement) => {
