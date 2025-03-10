@@ -1,4 +1,7 @@
-# Your Next Store
+# Concierge
+
+Concierge is a demo by [Angelo Giacco](github.com/angelogiacco) of integrating ElevenLabs Conversational AI with e-commerce. 
+Concierge is based off the great [yournextstore](https://github.com/yournextstore/yournextstore) project.
 
 <div align="center">
 <table>
