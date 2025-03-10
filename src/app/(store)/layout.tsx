@@ -1,4 +1,5 @@
 import "@/app/globals.css";
+import { ElevenLabsWidget } from "@/components/ElevenLabsWidget";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { CartModalProvider } from "@/context/cart-modal";
 import { Footer } from "@/ui/footer/footer";
@@ -35,6 +36,7 @@ export default async function StoreLayout({
 					logoUrl: logoLink?.url,
 				})}
 			/>
+			<ElevenLabsWidget />
 		</>
 	);
 }
