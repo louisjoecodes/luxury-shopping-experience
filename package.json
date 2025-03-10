@@ -13,7 +13,8 @@
 		"test": "vitest",
 		"prepare": "pnpm husky",
 		"docker:build": "docker build -t yournextstore .",
-		"docker:run": "docker run -d -p 3000:3000 yournextstore"
+		"docker:run": "docker run -d -p 3000:3000 yournextstore",
+		"clean": "rm -rf .next/cache"
 	},
 	"dependencies": {
 		"@ai-sdk/openai": "1.1.14",
