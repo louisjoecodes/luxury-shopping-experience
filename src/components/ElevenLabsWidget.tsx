@@ -86,7 +86,7 @@ export function ElevenLabsWidget() {
 					return window.location.pathname;
 				},
 				go_to_checkout: () => {
-					router.push("/checkout");
+					router.push("/cart");
 				},
 				add_to_cart: async ({ quantity = 1 }) => {
 					const addToCartButton = document.querySelector('[data-testid="add-to-cart-button"]');
