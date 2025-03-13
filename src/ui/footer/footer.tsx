@@ -1,4 +1,3 @@
-import { getTranslations } from "@/i18n/server";
 import StoreConfig from "@/store.config";
 import { YnsLink } from "@/ui/yns-link";
 
