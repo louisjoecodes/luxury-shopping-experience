@@ -1,5 +1,6 @@
 import { publicUrl } from "@/env.mjs";
 import { getTranslations } from "@/i18n/server";
+import ApparelImage from "@/images/apparel.png";
 import StoreConfig from "@/store.config";
 import { CategoryBox } from "@/ui/category-box";
 import { ProductList } from "@/ui/products/product-list";
@@ -17,20 +18,19 @@ export default async function Home() {
 
 	return (
 		<main>
-			<section className="rounded bg-neutral-100 py-8 sm:py-12">
-				<div className="mx-auto grid grid-cols-1 items-center justify-items-center gap-8 px-8 sm:px-16 md:grid-cols-2">
+			<section className="rounded bg-neutral-100 py-24 sm:py-32">
+				<div className="mx-auto grid grid-cols-1 items-center justify-items-center gap-12 px-8 sm:px-24 md:grid-cols-2">
 					<div className="max-w-md space-y-4">
 						<h2 className="text-balance text-3xl font-bold tracking-tight md:text-4xl">{t("hero.title")}</h2>
 						<p className="text-pretty text-neutral-600">{t("hero.description")}</p>
 					</div>
 					<Image
-						alt="Cup of Coffee"
+						alt="ElevenLabs Quarter-Zip Sweatshirt"
 						loading="eager"
 						priority={true}
-						className="rounded"
 						height={450}
 						width={450}
-						src="https://files.stripe.com/links/MDB8YWNjdF8xT3BaeG5GSmNWbVh6bURsfGZsX3Rlc3RfaDVvWXowdU9ZbWlobUIyaHpNc1hCeDM200NBzvUjqP"
+						src={ApparelImage}
 						style={{
 							objectFit: "cover",
 						}}

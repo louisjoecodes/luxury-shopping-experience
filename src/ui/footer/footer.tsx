@@ -30,8 +30,6 @@ const sections = [
 ];
 
 export async function Footer() {
-	const t = await getTranslations("Global.footer");
-
 	return (
 		<footer className="w-full bg-neutral-50 p-6 text-neutral-800 md:py-12">
 			<div className="container flex max-w-7xl flex-row flex-wrap justify-center gap-16 text-sm sm:justify-between">
