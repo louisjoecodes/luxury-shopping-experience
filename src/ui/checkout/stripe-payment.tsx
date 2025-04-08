@@ -237,6 +237,12 @@ const PaymentForm = ({
 						setEmail(event.value.email);
 					}
 				}}
+				options={{
+					defaultValues: {
+						email: email || "",
+					},
+				}}
+				className="text-white"
 			/>
 			<AddressElement
 				options={{

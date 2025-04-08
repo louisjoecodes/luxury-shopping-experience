@@ -39,6 +39,17 @@ export const StripeElementsContainer = ({
 				fontFamily: `ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"`,
 				fontSizeSm: "0.875rem",
 				colorDanger: "hsl(0 84.2% 60.2%)",
+				colorText: "#FFFFFF",
+				colorTextSecondary: "#FFFFFF",
+				colorTextPlaceholder: "rgba(255, 255, 255, 0.6)",
+			},
+			rules: {
+				".Label": {
+					color: "white",
+				},
+				".Input": {
+					color: "white",
+				},
 			},
 		},
 		locale,

@@ -1,28 +1,54 @@
-import { CartSummaryNav } from "@/ui/nav/cart-summary-nav";
-import { NavMenu } from "@/ui/nav/nav-menu";
-import { SearchNav } from "@/ui/nav/search-nav";
-import { SeoH1 } from "@/ui/seo-h1";
 import { YnsLink } from "@/ui/yns-link";
-import { UserIcon } from "lucide-react";
+import { ShoppingBagIcon, UserIcon } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 export const Nav = async () => {
 	return (
-		<header className="z-50 py-4 sticky top-0 bg-white/90 backdrop-blur-xs nav-border-reveal">
-			<div className="mx-auto flex max-w-7xl items-center gap-2 px-4 flex-row sm:px-6 lg:px-8">
-				<YnsLink href="/">
-					<SeoH1 className="-mt-0.5 whitespace-nowrap text-xl font-bold">Concierge by ElevenLabs</SeoH1>
+		<header className="z-50 py-5 sticky top-0 bg-black nav-border-reveal">
+			<div className="mx-auto flex max-w-7xl items-center justify-between px-6 flex-row lg:px-8">
+				<YnsLink href="/" className="flex items-center">
+					<div className="flex flex-col items-center relative">
+						<Image
+							src="/images/logo.png"
+							alt="ELEVENLABS Logo"
+							width={160}
+							height={40}
+							className="h-auto"
+							priority
+						/>
+						<span className="text-xs font-medium text-gray-400 tracking-widest mt-1 absolute bottom-0 right-0 translate-y-full">
+							TIMEPIECES
+						</span>
+					</div>
 				</YnsLink>
 
-				<div className="max-w-full flex shrink w-auto sm:mr-auto overflow-auto max-sm:order-2">
-					<NavMenu />
+				<div className="hidden md:flex items-center space-x-8">
+					<YnsLink href="/" className="text-sm text-white font-medium hover:text-gray-300 transition-colors">
+						Home
+					</YnsLink>
+					<YnsLink
+						href="/product/eleven-1"
+						className="text-sm text-white font-medium hover:text-gray-300 transition-colors"
+					>
+						The Watch
+					</YnsLink>
+					<Link
+						href="/#craftsmanship"
+						className="text-sm text-white font-medium hover:text-gray-300 transition-colors"
+					>
+						Craftsmanship
+					</Link>
 				</div>
-				<div className="mr-3 ml-auto sm:ml-0">
-					<SearchNav />
+
+				<div className="flex items-center space-x-5">
+					<YnsLink href="/cart" className="text-white hover:text-gray-300 transition-colors">
+						<ShoppingBagIcon className="h-5 w-5" />
+					</YnsLink>
+					<YnsLink href="/login" className="text-white hover:text-gray-300 transition-colors">
+						<UserIcon className="h-5 w-5" />
+					</YnsLink>
 				</div>
-				<CartSummaryNav />
-				<YnsLink href="/login">
-					<UserIcon className="hover:text-neutral-500" />
-				</YnsLink>
 			</div>
 		</header>
 	);

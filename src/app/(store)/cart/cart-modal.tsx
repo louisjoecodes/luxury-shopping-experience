@@ -25,23 +25,23 @@ export async function CartModalPage() {
 
 	return (
 		<CartAsideContainer>
-			<div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
+			<div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6 bg-black">
 				<div className="flex items-center justify-between">
-					<h2 className="text-lg font-semibold text-neutral-700">{t("title")}</h2>
-					<YnsLink replace href="/cart" className="text-sm text-muted-foreground underline">
+					<h2 className="text-lg font-semibold text-white">{t("title")}</h2>
+					<YnsLink replace href="/cart" className="text-sm text-gray-400 underline hover:text-white">
 						{t("openFullView")}
 					</YnsLink>
 				</div>
 
 				<div className="mt-8">
-					<ul role="list" className="-my-6 divide-y divide-neutral-200">
+					<ul role="list" className="-my-6 divide-y divide-gray-800">
 						{cart.lines.map((line) => (
 							<li
 								key={line.product.id}
 								className="grid grid-cols-[4rem_1fr_max-content] grid-rows-[auto_auto] gap-x-4 gap-y-2 py-6"
 							>
 								{line.product.images[0] ? (
-									<div className="col-span-1 row-span-2 bg-neutral-100">
+									<div className="col-span-1 row-span-2 bg-gray-900 rounded-md">
 										<Image
 											className="aspect-square rounded-md object-cover"
 											src={line.product.images[0]}
@@ -54,17 +54,17 @@ export async function CartModalPage() {
 									<div className="col-span-1 row-span-2" />
 								)}
 
-								<h3 className="-mt-1 font-semibold leading-tight">
+								<h3 className="-mt-1 font-semibold leading-tight text-white">
 									{formatProductName(line.product.name, line.product.metadata.variant)}
 								</h3>
-								<p className="text-sm font-medium leading-none">
+								<p className="text-sm font-medium leading-none text-white">
 									{formatMoney({
 										amount: line.product.default_price.unit_amount ?? 0,
 										currency: line.product.default_price.currency,
 										locale,
 									})}
 								</p>
-								<p className="self-end text-sm font-medium text-muted-foreground">
+								<p className="self-end text-sm font-medium text-gray-400">
 									{t("quantity", { quantity: line.quantity })}
 								</p>
 							</li>
@@ -73,11 +73,8 @@ export async function CartModalPage() {
 				</div>
 			</div>
 
-			<div className="border-t border-neutral-200 px-4 py-6 sm:px-6">
-				<div
-					id="cart-overlay-description"
-					className="flex justify-between text-base font-medium text-neutral-900"
-				>
+			<div className="border-t border-gray-800 px-4 py-6 sm:px-6 bg-black">
+				<div id="cart-overlay-description" className="flex justify-between text-base font-medium text-white">
 					<p>{t("total")}</p>
 					<p>
 						{formatMoney({
@@ -87,8 +84,12 @@ export async function CartModalPage() {
 						})}
 					</p>
 				</div>
-				<p className="mt-0.5 text-sm text-neutral-500">{t("shippingAndTaxesInfo")}</p>
-				<Button asChild={true} size={"lg"} className="mt-6 w-full rounded-full text-lg">
+				<p className="mt-0.5 text-sm text-gray-500">{t("shippingAndTaxesInfo")}</p>
+				<Button
+					asChild={true}
+					size={"lg"}
+					className="mt-6 w-full rounded-full text-lg bg-white text-black hover:bg-gray-200"
+				>
 					<YnsLink href="/cart">{t("goToPaymentButton")}</YnsLink>
 				</Button>
 			</div>
